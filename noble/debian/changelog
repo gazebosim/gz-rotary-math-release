@@ -1,0 +1,5 @@
+gz-math (@VERSION_TEMPLATE@) noble; urgency=medium
+
+  * Rotary nightly release
+
+ -- Jose Luis Rivero <jrivero@osrfoundation.org>  Wed, 01 Jan 2025 00:00:00 +0000

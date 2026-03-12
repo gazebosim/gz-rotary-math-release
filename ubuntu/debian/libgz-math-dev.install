@@ -1,0 +1,6 @@
+usr/include/*
+usr/lib/*/*.so
+usr/lib/*/pkgconfig/*.pc
+usr/lib/*/cmake/*-math/*
+usr/lib/*/cmake/*-math-all/*
+usr/share/gz/*/*

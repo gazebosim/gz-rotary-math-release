@@ -1,0 +1,4 @@
+usr/include/*/*/*/math/eigen3/*
+usr/include/*/*/*/math/eigen3.hh
+usr/lib/*/pkgconfig/*-math-eigen3.pc
+usr/lib/*/cmake/*-math-eigen3/*

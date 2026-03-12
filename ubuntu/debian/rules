@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+.PHONY: override_dh_auto_configure \
+        override_dh_install \
+        override_dh_auto_test \
+        override_dh_auto_build
+
+%:
+	dh $@ --parallel --with python3
+
+override_dh_auto_configure:
+	dh_auto_configure -- \
+	    -DCMAKE_BUILD_TYPE=RelWithDebInfo \
+	    -DUSE_SYSTEM_PATHS_FOR_PYTHON_INSTALLATION=ON \
+	    -DUSE_DIST_PACKAGES_FOR_PYTHON=ON \
+	    -DUSE_SYSTEM_PATHS_FOR_RUBY_INSTALLATION=ON
+
+# Execute doc creation to export at least the doxygen tag file
+override_dh_auto_build:
+	dh_auto_build -- doc
+	dh_auto_build
+
+override_dh_install:
+	install -d debian/tmp/usr/share/gz/gz-math/
+	install ./obj-*/*.tag.xml debian/tmp/usr/share/gz/gz-math/
+	dh_install
+	# remove duplicate eigen files from mathx-dev.install regexp
+	cd debian/libgz-math-eigen3-dev; find . -type f -exec rm -f ../libgz-math-dev/{} \;
+	find debian/libgz-math-dev -type d -empty -delete
+
+override_dh_auto_test:
+ifeq ($(DEB_HOST_ARCH),armhf)
+	true
+else
+	dh_auto_test $@ --no-parallel --buildsystem=cmake -- ARGS="-E EXAMPLES_.*_TEST"
+endif
