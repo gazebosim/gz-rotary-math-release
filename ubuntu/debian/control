@@ -147,7 +147,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-math-python
+Package: python3-rotary-gz-math
 Depends: python3-gz-math (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
