@@ -155,7 +155,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: gz-jetty-math-ruby
+Package: gz-rotary-math-ruby
 Depends: ruby-gz-math (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
