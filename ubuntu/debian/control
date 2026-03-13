@@ -123,7 +123,7 @@ Description: Gazebo Math Library - Ruby bindings
  .
  The package contains the Ruby bindings.
 
-Package: libgz-rotary-math
+Package: gz-rotary-math
 Depends: libgz-math (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -131,7 +131,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-math-dev
+Package: gz-rotary-math-dev
 Depends: libgz-math-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -139,7 +139,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-math-eigen3-dev
+Package: gz-rotary-math-eigen3
 Depends: libgz-math-eigen3-dev (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -147,7 +147,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: python3-rotary-gz-math
+Package: gz-rotary-math-python
 Depends: python3-gz-math (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
@@ -155,7 +155,7 @@ Section: metapackages
 Description: alias package
  Provides a package for Rotary without exposing the version number.
 
-Package: libgz-rotary-math-ruby
+Package: gz-jetty-math-ruby
 Depends: ruby-gz-math (= ${binary:Version}), ${misc:Depends}
 Architecture: all
 Priority: optional
